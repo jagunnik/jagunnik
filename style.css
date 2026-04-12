@@ -422,6 +422,44 @@ ul {
     opacity: 0.9;
 }
 
+.call-banner {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 50px;
+    padding: 10px 30px;
+    margin-top: 1.5rem;
+    gap: 15px;
+    backdrop-filter: blur(5px);
+    transition: var(--transition);
+    color: var(--white);
+    text-decoration: none;
+}
+
+.call-banner:hover {
+    background: var(--white);
+    color: var(--primary);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.call-icon {
+    font-size: 1.6rem;
+}
+
+.call-text {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.call-number {
+    font-size: 1.8rem;
+    font-weight: 700;
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: 1px;
+}
+
 /* ======= Footer ======= */
 .footer {
     background-color: #222222;
