@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상담 예약 - 썬-마음나누기상담센터</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/sun_logo_transparent.png" type="image/x-icon">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <img src="img/sun_logo_transparent.png" alt="썬-마음나누기상담센터 로고">
+                <span>썬-마음나누기상담센터</span>
+            </a>
+            <nav class="gnb">
+                <ul>
+                    <li><a href="about.html" target="_blank">ABOUT 썬-마음나누기</a></li>
+                    <li><a href="programs.html" target="_blank">마음나누기 프로그램</a></li>
+                    <li><a href="voucher.html" target="_blank">정부지원 바우처</a></li>
+
+                    <li><a href="community.html" target="_blank">썬-커뮤니티</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div style="padding-top: 10rem; padding-bottom: 5rem; min-height: 60vh;">
+        <div class="container" style="max-width: 800px;">
+            <div class="section-title text-center">
+                <h2>청소년/성인 심리상담 예약</h2>
+                <p>우울, 불안, 관계의 어려움 등 마음의 평안을 찾아가는 과정입니다.</p>
+            </div>
+            <div style="background: var(--white); padding: 4rem; border-radius: 20px; box-shadow: var(--box-shadow); margin-top: 2rem;">
+                <form style="max-width: 600px; margin: 0 auto; text-align: left;">
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: #333;">이름</label>
+                        <input type="text" placeholder="예: 홍길동" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px;">
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: #333;">성별 / 연령</label>
+                        <input type="text" placeholder="예: 여 / 28세" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px;">
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: #333;">연락처</label>
+                        <input type="text" placeholder="예: 010-1234-5678" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px;">
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: #333;">거주지 주소</label>
+                        <input type="text" placeholder="예: 천안시 동남구 ..." style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px;">
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: #333;">예약 희망 시간</label>
+                        <input type="datetime-local" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px;">
+                    </div>
+                    <div style="margin-bottom: 2rem;">
+                        <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: #333;">간단한 신청 사유 (선택)</label>
+                        <textarea rows="4" placeholder="상담을 받으시려는 주된 이유나 어려움을 간단히 작성해 주시면 큰 도움이 됩니다." style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; resize: vertical;"></textarea>
+                    </div>
+                    <button type="button" onclick="alert('예약 신청이 완료되었습니다. 확인 후 담당자가 안내 연락 드리겠습니다.'); window.close();" class="btn btn-primary" style="width: 100%; border: none; font-size: 1.1rem; padding: 1rem; border-radius: 50px;">예약 신청하기</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
