@@ -38,7 +38,7 @@
                 <p class="hero-subtitle">마음에 따뜻한 볕을 들이다</p>
                 <h1 class="hero-title">우리 모두의<br>눈부신 내일을 위해</h1>
                 <p class="hero-desc">위로와 공감이 있는 곳,<br>썬-마음나누기상담센터가 언제나 함께합니다.</p>
-                <a href="#" class="btn btn-primary">온라인 상담예약 가기</a>
+                <a href="#" class="btn btn-primary" onclick="openReservationModal(event)">온라인 상담예약 가기</a>
             </div>
         </div>
     </section>
@@ -156,10 +156,18 @@
                     <span>썬-마음나누기상담센터</span>
                 </a>
                 <div class="sns-links">
-                    <a href="https://www.youtube.com/watch?v=R9Pj6mc9mxc" target="_blank">유튜브</a>
-                    <a href="https://blog.naver.com/jagunni77/224244222234" target="_blank">블로그</a>
-                    <a href="#">카카오톡</a>
-                    <a href="#">인스타그램</a>
+                    <a href="https://www.youtube.com/watch?v=R9Pj6mc9mxc" target="_blank" title="유튜브">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                    </a>
+                    <a href="https://blog.naver.com/jagunni77/224244222234" target="_blank" title="블로그">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16.273 12.845L7.376 0H0v24h7.726V11.156L16.624 24H24V0h-7.727v12.845z"/></svg>
+                    </a>
+                    <a href="#" title="카카오톡">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-5.523 0-10 3.58-10 8 0 2.872 1.936 5.394 4.887 6.776-.328 1.155-1.189 4.14-1.228 4.35-.05.275.097.28.21.21.088-.052 3.494-2.316 4.908-3.238.398.056.806.082 1.223.082 5.523 0 10-3.58 10-8s-4.477-8-10-8z"/></svg>
+                    </a>
+                    <a href="#" title="인스타그램">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
                     <a href="#" id="settings-btn" title="설정">⚙️</a>
                 </div>
             </div>
@@ -173,8 +181,64 @@
         </div>
     </footer>
 
-    <!-- Admin Script -->
+    <!-- Reservation Modal -->
+    <div id="reservationModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeReservationModal()">&times;</span>
+            <h2>온라인 상담예약</h2>
+            <p>상담 예약 정보를 남겨주시면 빠른 시일 내에 연락드리겠습니다.</p>
+            <form onsubmit="submitReservation(event)">
+                <div class="form-group">
+                    <label for="resName">이름</label>
+                    <input type="text" id="resName" required placeholder="이름을 입력하세요">
+                </div>
+                <div class="form-group">
+                    <label for="resPhone">연락처</label>
+                    <input type="tel" id="resPhone" required placeholder="010-0000-0000">
+                </div>
+                <div class="form-group">
+                    <label for="resTime">예약시간</label>
+                    <select id="resTime" required>
+                        <option value="" disabled selected>희망 예약시간을 선택하세요</option>
+                        <option value="오전">오전 (09:00 - 12:00)</option>
+                        <option value="오후">오후 (13:00 - 18:00)</option>
+                        <option value="저녁">저녁 (18:00 - 21:00)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="resMemo">메모</label>
+                    <textarea id="resMemo" rows="4" placeholder="상담 문의 내용을 자유롭게 적어주세요."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary submit-btn">예약 신청하기</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin & Modal Script -->
     <script>
+        function openReservationModal(e) {
+            e.preventDefault();
+            document.getElementById('reservationModal').style.display = 'flex';
+        }
+
+        function closeReservationModal() {
+            document.getElementById('reservationModal').style.display = 'none';
+        }
+
+        function submitReservation(e) {
+            e.preventDefault();
+            alert('상담 예약이 성공적으로 신청되었습니다. 빠른 시일 내에 연락드리겠습니다.');
+            closeReservationModal();
+            e.target.reset();
+        }
+        
+        window.onclick = function(event) {
+            const modal = document.getElementById('reservationModal');
+            if (event.target == modal) {
+                closeReservationModal();
+            }
+        }
+
         document.getElementById('settings-btn').addEventListener('click', function(e) {
             e.preventDefault();
             
